@@ -1,0 +1,119 @@
+# I dont know how to put in the form of code so i put it in text file format
+#Create  database
+embroidery_design
+use table
+#create Tables
+#table 1
+CREATE TABLE applications (
+    career_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    position VARCHAR(255) NOT NULL,
+    resume_path VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+#Table 2
+CREATE TABLE comments (
+    comment_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    post_id INT(11) NOT NULL,
+    user_name VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+#Table 3
+CREATE TABLE contact_messages (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(200) NOT NULL,
+    last_name VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    subject VARCHAR(255) DEFAULT NULL,
+    message TEXT NOT NULL,
+    user_id INT(11) DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+#Table 4
+CREATE TABLE customer_orders (
+    order_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11) DEFAULT NULL,
+    product_type VARCHAR(255) DEFAULT NULL,
+    design_description TEXT DEFAULT NULL,
+    fabric_type VARCHAR(255) DEFAULT NULL,
+    size_dimensions VARCHAR(255) DEFAULT NULL,
+    quantity INT(11) DEFAULT NULL,
+    delivery_date DATE DEFAULT NULL,
+    delivery_address TEXT DEFAULT NULL,
+    special_instructions TEXT DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+#Table 5
+CREATE TABLE orders (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11) DEFAULT NULL,
+    product_id INT(11) DEFAULT NULL,
+    first_name VARCHAR(200) NOT NULL,
+    last_name VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    address2 VARCHAR(255) DEFAULT NULL,
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    zip VARCHAR(20) NOT NULL,
+    quantity INT(11) NOT NULL
+);
+
+#Table 6
+CREATE TABLE posts (
+    post_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    image_url VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+#Table 7
+CREATE TABLE product (
+    product_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    product_image VARCHAR(255) DEFAULT NULL,
+    price DECIMAL(10,2) DEFAULT NULL,
+    discount DECIMAL(10,2) DEFAULT NULL
+);
+
+#table 8
+CREATE TABLE products (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    description TEXT DEFAULT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
+
+#Table 9
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(200) NOT NULL,
+    lastname VARCHAR(200) NOT NULL,
+    username VARCHAR(200) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    password VARCHAR(200) NOT NULL
+);
+
+#Table 10
+CREATE TABLE user_applications (
+    user_application_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    career_id INT(11) NOT NULL,
+    user_id INT(11) NOT NULL
+);
+
+#Table 11
+CREATE TABLE website_feedback (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    rating INT(1) NOT NULL,
+    visit_reason VARCHAR(255) NOT NULL,
+    experience TEXT NOT NULL,
+    improvement TEXT NOT NULL,
+    recommend ENUM('yes', 'no') NOT NULL,
+    user_id INT(11) DEFAULT NULL
+);
+
