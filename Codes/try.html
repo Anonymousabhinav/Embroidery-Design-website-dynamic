@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kay Kay Embroideries</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="try.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="main">
+        <!-- Navbar Section -->
+        <div class="navbar">
+            <div class="icon">
+                <!-- Logo -->
+                <a href="home.html">
+                    <img src="logo.png" alt="logo_image" class="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rectangle Background -->
+    <div class="rectangle">
+
+    <!-- Navigation Section -->
+    <div class="navigations">
+        <h3 class="home"><a href="home.html">Home</a></h3>
+        <div class="dropdown">
+            <button class="dropdown-button">Products <i class="fa-solid fa-caret-down"></i></button>
+            <div id="dropdown-content" class="dropdown-content">
+                <a href="#">All Products</a>
+                <a href="#">4X4 All over</a>
+                <a href="#">4X4 Lace</a>
+                <a href="#">4X4 Chemical Lace</a>
+                <a href="#">8X4 All Over</a>
+            </div>
+        </div>
+        <h3><a href="gallery.html">Gallery</a></h3>
+        <h3><a href="services.html">Services</a></h3>
+        <h3><a href="aboutus.html">About Us</a></h3>
+        <!-- Hamburger Menu -->
+        <div class="hamburger-content">
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <div class="dropdown2" id="dropdown2-menu">
+                    <a href="#">Custom orders</a>
+                    <a href="#">Materials</a>
+                    <a href="#">Design software</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="content">
+        <div class="search">
+            <input type="text" class="search__input" aria-label="search" placeholder="Search designs">
+            <button class="search__submit" aria-label="submit search"><i class="far fa-search fa-spin"></i></button>
+        </div>
+    </div>
+
+    <!-- Login/Signup Button -->
+    <div class="loginbutton">
+        <a href="login.html">
+            <button type="submit">LOGIN/SIGNUP</button>
+        </a>
+    </div>
+</div>
+
+    <!-- Logo Again Section -->
+    <div class="container-logo">
+        <div class="logo-again">
+            <img src="logo.png" alt="logo2">
+            <div class="rectangle-logo"></div>
+        </div>
+    </div>
+
+    <!-- Gallery and Images Section -->
+    <div class="backimage1">
+        <div class="crop-container1">
+            <img src="image1.jpeg" alt="image1" class="back-image1">
+        </div>
+    </div>
+    <div class="backimage2">
+        <img src="image2.jpeg" alt="image2" class="back-image2">
+    </div>
+
+    <!-- Gallery Text Section -->
+    <div class="text">
+        <h2>Gallery</h2>
+        <p>Welcome to our gallery where you <br>can see our most anticipated <br>and trusted works by top companies.</p>
+    </div>
+
+    <!-- Down Image Section -->
+    <div class="down-image">
+        <img src="image3new.jpg" alt="image" class="images">
+    </div>
+
+    <!-- Gallery Images Section -->
+    <div class="galleryimage">
+        <div class="gallery-image1" onclick="changeImage(this)">
+            <img src="gallery1.png" alt="gallery" class="gal">
+        </div>
+
+        <div class="gallery-image2" onclick="changeImage(this)">
+            <img src="gallery2.png" alt="gallery" class="gal2">
+        </div>
+
+        <div class="gallery-image3" onclick="changeImage(this)">
+            <img src="gallery3.png" alt="gallery" class="gal3">
+        </div>
+
+        <div class="gallery-image4" onclick="changeImage(this)">
+            <img src="gallery4.png" alt="gallery" class="gal4">
+        </div>
+    </div>
+
+    <!-- Top Designs Section -->
+    <div class="top">
+        <h2>Top Designs</h2>
+        <p>Browse Through our top designs</p>
+    </div>
+
+    <!-- Why They Choose Us Section -->
+    <div class="theybox">
+        <div class="they-choose">
+            <h2>Why They Choose Us</h2>
+            <div class="topcompanies">
+                <div class="rectangle1">
+                    <img class="blur" src="top1.jpg">
+                    <div class="content1">This image showcases one of our biggest orders to date.</div>
+                </div>
+                <div class="rectangle2">
+                    <img class="blur" src="top2.jpg">
+                    <div class="content2">A unique design still being sold on our site.</div>
+                </div>
+                <div class="rectangle3">
+                    <img class="blur" src="top3.jpg">
+                    <div class="content3">Another one of our most significant designs.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dropdown Functionality -->
+    <script src="scriptgallery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,734 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 3;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.abtrectangle {
+    position: absolute;
+    width: 100vw;
+    height: 35vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.abtrectangle .media-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    z-index: 1; /* Position the video behind the text */
+}
+
+.abtrectangle h2, .abtrectangle p {
+    position: absolute;
+    z-index: 2; /* Ensures text is on top of the video */
+}
+
+.abtrectangle h2 {
+    margin-top: 5%;
+    font-size: 100px;
+    font-family: "Advent Pro", sans-serif;
+    left: 15vw;
+    color: #ffffff;
+}
+
+.abtrectangle p {
+    position: absolute;
+    margin-top: 7%;
+    font-size: 25px;
+    left: 25vw;
+    color: #ffffff;
+}
+
+
+.moreaboutus {
+    position: absolute;
+    width: 35vw;
+    height: 40vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden; /* Ensures the image doesn't overflow outside the rectangle */
+    margin-top: 23%;
+    left: 15vw;
+    border-radius: 0 50px 0 50px;
+}
+
+.moreaboutus img {
+    position: relative; /* Position relative so it's contained within the rectangle */
+    width: 100%; /* Make the image fit the width of the rectangle */
+    height: 100%; /* Make the image fit the height of the rectangle */
+    object-fit: cover; /* Ensures the image scales correctly without distortion */
+    display: block;
+}
+
+.moreabouttext{
+    position: absolute;
+    width: 40vw;
+    height: 30vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    z-index: 4;
+    overflow: hidden; /* Ensures the image doesn't overflow outside the rectangle */
+    margin-top: 35%;
+    right: 21vw;
+    border-radius: 90px 20px 20px 20px;
+}
+
+.moreabouttext h2{
+    position: absolute;
+    margin-top: 2%;
+    font-size: 50px;
+    left: 12vw;
+}
+
+.moreabouttext p{
+    position: absolute;
+    width: 35vw;
+    margin-top: 12%;
+    font-size: 25px;
+    text-align: center;
+    left: 2vw;
+}
+
+.moreabt-rect {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 58%;
+}
+
+.moreabt-rect .m {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-top: 10%;
+    font-size: 25px;
+    left: 21.7vw;
+}
+
+.moreabt-rect p1 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 80px;
+    left: 21.8vw;
+    font-weight: bold;
+    color: rgb(201, 201, 74);
+}
+
+.moreabt-rect h2.m1 {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-top: 10%;
+    font-size: 25px;
+    left: 37vw;
+}
+
+.moreabt-rect p2 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 80px;
+    left: 35vw;
+    font-weight: bold;
+    color: rgb(201, 201, 74);
+}
+
+.moreabt-rect h2.m2 {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-top: 10%;
+    font-size: 25px;
+    left: 51vw;
+}
+
+.moreabt-rect p3 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 80px;
+    left: 25vw;
+    font-weight: bold;
+    color: rgb(201, 201, 74);
+}
+.moreabt-rect h2.m3 {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-top: 10%;
+    font-size: 25px;
+    left: 72vw;
+}
+
+.moreabt-rect p4 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 80px;
+    left:70vw ;
+    font-weight: bold;
+    color: rgb(201, 201, 74);
+}
+
+.how-we h2 {
+    position: absolute; /* Absolute positioning */
+    margin-top: 77%; /* Positions the element 100% from the top of the containing block */
+    color: #000000;
+    font-size:60px ;
+    left: 20vw;
+    z-index: 4;
+    font-weight: bol;
+}
+
+.how-we1 p{
+    text-align: center;
+    position: absolute;
+    width: 70vw;
+    height: 35vh;
+    margin-top: 83%;
+    left: 16vw;
+    font-size: 30px;
+    z-index: 4;
+}
+
+.what-we{
+    position: absolute;
+    width: 100vw;
+    height:60vh;
+    background-color: rgba(150, 137, 137, 0.3);
+    margin-top: 100%;
+}
+
+.what-we video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensure the video covers the container */
+    z-index: 1;
+}
+
+.what-we h2.w1{
+    position: absolute;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 85px;
+    z-index: 2;
+    margin-left: 39vw;
+    margin-top: 2%;
+}
+
+.what-we h2.w2{
+    position: absolute;
+    margin-top: 11%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 19vw;
+}
+
+
+.what-we p1{
+    position: absolute;
+    margin-top: 13%;
+    z-index: 2;
+    width: 17vw;
+    margin-left: 16vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.what-we h2.w3{
+    position: absolute;
+    margin-top: 11%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 43vw;
+}
+
+.what-we p2{
+    position: absolute;
+    margin-top: 13%;
+    z-index: 2;
+    width: 20vw;
+    margin-left: 39vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.what-we h2.w4{
+    position: absolute;
+    margin-top: 11%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 70vw;
+}
+
+.what-we p3{
+    position: absolute;
+    margin-top: 13%;
+    z-index: 2;
+    width: 20vw;
+    margin-left: 65vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.what-we h2.w5{
+    position: absolute;
+    margin-top: 18.5%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 17vw;
+}
+
+.what-we p4{
+    position: absolute;
+    margin-top: 20.5%;
+    z-index: 2;
+    width: 17vw;
+    margin-left: 16vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.what-we h2.w6{
+    position: absolute;
+    margin-top: 18.5%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 45vw;
+}
+
+.what-we p5{
+    position: absolute;
+    margin-top: 20.5%;
+    z-index: 2;
+    width: 20vw;
+    margin-left: 39vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.what-we h2.w7{
+    position: absolute;
+    margin-top: 18.5%;
+    color:  rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    z-index: 2;
+    margin-left: 71vw;
+}
+
+.what-we p6{
+    position: absolute;
+    margin-top: 20.5%;
+    z-index: 2;
+    width: 20vw;
+    margin-left: 65vw;
+    font-size: 16px;
+    text-align: center;
+}
+
+.rectanglecompany3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 70px;
+    border-radius: 20px;
+    margin-top: 130%; 
+    margin-left: 38vw; 
+}
+.rectanglecompany {
+    position: absolute; /* Absolute positioning */
+    width: 23vw;
+    height: 40vh;
+    z-index: 2;
+    margin-top: 130%; 
+    left: 20%; /* Distance from the left of the container */
+    border-radius: 6px;
+}
+
+.rectanglecompany img {
+    display: block;
+    width: 100%;
+    height: 100%; /* Adjusted to fit the container */
+    border-radius: 5px;
+}
+
+.rectanglecompany2 {
+    position: absolute; /* Absolute positioning */
+    width: 26vw;
+    height: 40vh;
+    z-index: 2;
+    margin-top: 130%; 
+    margin-left: 50vw;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.rectanglecompany2 img {
+    display: block;
+    width: 100%;
+    height: 110%; /* Adjusted to fit the container */
+    border-radius: 20px;
+}
+
+.rectanglecompany4{
+    position: absolute; /* Absolute positioning */
+    width: 30vw;
+    height: 40vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(226, 218, 218);
+    margin-top: 150%; /* Distance from the top of the container */
+    margin-left: 51vw; /* Distance from the left of the container */
+    border-radius: 20px;
+}
+
+.rectanglecompany4 h2{
+    position: absolute;
+    margin-left: 3vw;
+    margin-top: 3%;
+    font-size: 50px;
+}
+
+.rectanglecompany4 p{
+    position: absolute;
+    margin-top: 13%;
+    font-size:20px ;
+    margin-left: 12vw;
+}
+
+.rectanglecompany4 p1{
+    position: absolute;
+    margin-top: 20%;
+    font-size: 26px;
+    text-align: center;
+}
+
+.rectanglecompany5 {
+    position: absolute; /* Absolute positioning */
+    width: 30vw;
+    height: 40vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(226, 218, 218);
+    margin-top: 150%; /* Distance from the top of the container */
+    margin-left: 14vw; /* Distance from the left of the container */
+    border-radius: 20px;
+}
+
+.rectanglecompany5 h2{
+    position: absolute;
+    margin-left: 7vw;
+    margin-top: 3%;
+    font-size: 50px;
+}
+.rectanglecompany5 p{
+    position: absolute;
+    margin-top: 13%;
+    font-size:20px ;
+    margin-left: 15vw;
+}
+
+.rectanglecompany5 p1{
+    position: absolute;
+    margin-top: 20%;
+    font-size: 26px;
+    text-align: center;
+}
+
+.rect{
+    position: absolute;
+    margin-top:180% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+    color: darkmagenta;
+    text-decoration: none;
+    text-decoration-color: darkmagenta;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

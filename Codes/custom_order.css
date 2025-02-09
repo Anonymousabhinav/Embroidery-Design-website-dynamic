@@ -1,0 +1,362 @@
+
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+
+.rectangle {
+    width: 100vw;
+    height: 10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top: -5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation {
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.bar:hover {
+    background-color: #ffffff;
+}
+
+.dropdown2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    padding: 10px;
+    z-index: 3;
+    text-align: center;
+    width: 200px;
+}
+
+.dropdown2 a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%;
+    right: 23px;
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block;
+}
+
+.login-button button {
+    width: 130px;
+    height: 45px;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button button:hover {
+    background-color: #333333;
+}
+
+
+.abtrectangle {
+    position: absolute;
+    width: 100vw;
+    height: 35vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden;
+}
+
+.abtrectangle h2 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 100px;
+    font-family: "Advent Pro", sans-serif;
+    left: 18vw;
+    z-index: 3; /* Ensures the text stays on top of the video */
+    color: white; /* Adjust color to ensure readability over video */
+}
+
+.abtrectangle p {
+    position: absolute;
+    margin-top: 11.5%;
+    font-size: 25px;
+    left: 30vw;
+    z-index: 3; /* Ensures the text stays on top of the video */
+    color: white; /* Adjust color to ensure readability over video */
+}
+
+.abtrectangle video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Sends the video behind the text */
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 40px;
+    margin-left: 35vw;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 22%;
+    max-width: 500px;
+    width: 100%;
+}
+
+form h2 {
+    font-size: 2em; /* Adjust font size as needed */
+    color: #333;
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+    font-weight: bold;
+}
+
+label {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+.btn {
+    margin-top: 5%;
+    width: 70%;
+    padding: 12px;
+    font-size: 1.2em;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+    border: none;
+    border-radius: 8px; /* Slightly larger border-radius for a more modern look */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all effects */
+    margin-left: 15%; /* Adjust margin-left for proper alignment */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transform: scale(1); /* Default scale */
+}
+
+.btn a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d7a); /* Darker gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.btn:active {
+    background: linear-gradient(135deg, #003d7a, #0056b3); /* Even darker gradient on active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Reduced shadow on active */
+    transform: scale(0.95); /* Slightly smaller on active to simulate pressing */
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+.form-fill {
+    margin-top: 65%;
+    margin-left: 35.4vw;
+    height: auto;
+    width: 30vw;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.rect{
+    position: absolute;
+    top:160% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

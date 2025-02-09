@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kay Kay Embroidery</title>
+    <link rel="shortcut icon" href="C:\Users\DELL\OneDrive\Desktop\SEM 3\MINI PROJECT\login page and create account\logo2.jpeg" />
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <!--Creating a logo fr the webpage -->
+                <img src="logo.png" alt="logo_image"  sizes="10px" class="logo">
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="rectangle"></div> <!-- New rectangle div -->
+    </div>
+    <!--This is used to create a small text or welcome text while entering the website -->
+    <div class="logintext1">
+        <h2>"Welcome back! Log in to 
+            <br>access your 
+            <br>personalized dashboard 
+            <br>and explore new 
+            <br>features tailored just for 
+            <br>you."</h2>
+    </div>
+    <!--This the text of the heading as "Login"-->
+    <div class="logintext2">
+        <h2 >Login</h2>
+    </div>
+    <!--This is used to create a login form for the user to enter their details-->
+    <div class="loginform">
+        <form action="login.php" method="post">
+            <div class="username">
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+    
+            <!-- Entering password -->
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <!-- Creating a button for login -->
+            <div class="buttonlogin">
+                <button type="submit">Login</button>
+            </div>
+    
+            <!-- Forgot password link -->
+            <div class="forgotpassword">
+                <a href="forgot_password.php">Forgot password?</a>
+            </div>
+    
+            <!-- Or text as optional for user -->
+            <h4 class="ortext">Or</h4>
+    
+            <!-- Link to create a new account -->
+            <div class="navtonew">
+                <h2>Are you new? Create a new account! <a href="create_account.html">Create account.</a></h2>
+            </div>
+        </form>
+    </div>
+        </div>
+</body>
+</html>

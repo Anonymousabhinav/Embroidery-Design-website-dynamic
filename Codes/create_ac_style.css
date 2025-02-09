@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden; /* Hide scroll bars and prevent scrolling */
+    margin: 0; /* Ensure no extra margin */
+    padding: 0; /* Ensure no extra padding */
+    height: 100%; /* Ensure the body takes up the full height */
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('background.png');
+    background-position: right;
+    background-size: cover;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    position: absolute;
+    z-index: 5;
+}
+
+.line{
+    position: absolute;
+    background-color: darkgrey;
+    width: 0.1vw;
+    height: 100%;
+    z-index: 10;
+    margin-left: 55vw;
+    margin-top: 0%;
+}
+
+.rectangle {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.7);
+    z-index: 3;
+}
+
+.logintext1 {
+    position: absolute;
+    left: 120px;
+    top: 20%;
+    color: #740000;
+    font-size: 50px;
+    font-family: "Indie Flower", cursive;
+    font-weight: 100;
+    z-index: 4;
+}
+
+.logintext2 {
+    position: absolute;
+    right: 320px;
+    top: 18%;
+    color: black;
+    font-size: 28px;
+    font-family: "Inter", sans-serif;
+    font-weight: normal;
+    z-index: 4;
+}
+
+.firstname, 
+.lastname, 
+.username, 
+.email, 
+.createpassword, 
+.confirmingpassword, 
+.buttoncreate, 
+.forgotpassword, 
+.ortext, 
+.navtonew {
+    margin-bottom: 15px;
+    font-family: "Inter", sans-serif;
+}
+
+label {
+    margin-right: 10px; 
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+    height: 20px;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 300px;
+}
+
+.firstname {
+    position: absolute;
+    top: 31%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.lastname {
+    position: absolute;
+    top: 39%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.username {
+    position: absolute;
+    top: 47%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.email {
+    position: absolute;
+    top: 55%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.createpassword {
+    position: absolute;
+    top: 63%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.confirmingpassword {
+    position: absolute;
+    top: 71%;
+    right: 235px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.buttoncreate {
+    position: absolute;
+    top: 79%;
+    right: 330px;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.buttoncreate button {
+    width: 135px;
+    height: 55px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #000000;
+    color: white;
+}
+
+.ortext {
+    position: absolute;
+    top: 86%;
+    right: 385px;
+    z-index: 4;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.navtonew {
+    position: absolute;
+    top: 91%;
+    right: 300px;
+    z-index: 4;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.navtonew a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}

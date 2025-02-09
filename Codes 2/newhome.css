@@ -1,0 +1,768 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 1;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for effect */
+    transform: translateY(-50px); /* Optional: adds a scroll-up animation */
+}
+
+.sticky-active {
+    transform: translateY(0); /* Bring navbar back to view */
+}
+
+
+.text h2{
+    position: absolute;
+    font-size: 60px;
+    top: 15%;
+    left: 29vw;
+    z-index: 2;
+    text-align: center;
+    
+}
+
+.text p{
+    position: absolute;
+    font-size: 20px;
+    top: 35%;
+    text-align: center;
+    left: 38vw;
+    z-index: 2;
+}
+
+
+.image-rolled1 {
+    z-index: 3;
+    width: 20vw;
+    height: 65vh;
+    position: absolute; /* Set relative positioning */
+    transition: transform 0.3s ease;
+    margin-top: 15.3%;
+    left: 4vw;
+}
+
+.image-rolled1 img {
+    position: absolute;
+    width: 100%; /* Ensure the image fits within its container */
+    height: 100%;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+    object-fit: cover; /* Ensure the image covers the container */
+    margin-top: 6%;
+}
+
+.image-rolled1:hover {
+    transform: translateY(-40px); /* Moves the container (and image) up by 10px */
+}
+
+.image-rolled2 {
+    z-index: 1;
+    width: 20vw;
+    height: 65vh;
+    position: absolute; /* Set relative positioning */
+    transition: transform 0.3s ease;
+    margin-top: 16.5%;
+    left: 28vw;
+}
+
+.image-rolled2 img {
+    width: 100%; /* Ensure the image fits within its container */
+    height: 100%;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.image-rolled2:hover {
+    transform: translateY(-40px); /* Moves the container (and image) up by 10px */
+}
+.image-rolled3 {
+    z-index: 1;
+    width: 20vw;
+    height: 65vh;
+    position: absolute; /* Set relative positioning */
+    transition: transform 0.3s ease;
+    margin-top: 16.5%;
+    left: 52.5vw;
+}
+
+.image-rolled3 img {
+    width: 100%; /* Ensure the image fits within its container */
+    height: 100%;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.image-rolled3:hover {
+    transform: translateY(-40px); /* Moves the container (and image) up by 10px */
+}
+.image-rolled4 {
+    z-index: 1;
+    width: 20vw;
+    height: 65vh;
+    position: absolute; /* Set relative positioning */
+    transition: transform 0.3s ease;
+    margin-top: 16.5%;
+    left: 76.5vw;
+}
+
+.image-rolled4 img {
+    width: 100%; /* Ensure the image fits within its container */
+    height: 100%;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.image-rolled4:hover {
+    transform: translateY(-40px); /* Moves the container (and image) up by 10px */
+}
+
+
+
+
+
+
+
+
+
+
+.text-company{
+    position: absolute;
+    margin-top: 52%;
+    
+    width: 100vw;
+    height: 50vh;
+    z-index: 2;
+}
+
+.text-company h2{
+    position: absolute;
+    left: 37vw;
+    font-size: 50px;
+}
+
+.text-company p{
+    position: absolute;
+    left: 32vw;
+    font-size: 22px;
+    top: 19%;
+}
+
+.rectangle-inside{
+    position: absolute;
+    height: 60vh;
+    width: 100vw;
+    margin-top: 50%;
+}
+.rectangle-inside img{
+    height: 100%;
+    width: 100%;
+}
+
+.shopping-bag{
+    position: absolute;
+    margin-top: 63%;
+    left: 26vw;
+    z-index: 2;
+}
+
+.shopping-bag i{
+    font-size: 70px;
+}
+
+.shopping-bag p{
+    position: absolute;
+    text-align:center;
+    top:90%
+}
+
+.designing{
+    z-index: 2;
+    position: absolute;
+    margin-top: 63%;
+    left: 40vw;
+}
+
+.designing i{
+    font-size: 70px;
+}
+
+.manufacturing{
+    z-index: 2;
+    position: absolute;
+    margin-top: 63%;
+    left: 55vw;
+}
+
+.manufacturing i{
+    font-size: 70px;
+}
+
+
+
+.delivery{
+    z-index: 2;
+    position: absolute;
+    margin-top: 63%;
+    left: 70vw;
+}
+
+.delivery i{
+    font-size: 70px;
+}
+
+.line{
+    position: absolute;
+    width: 49vw;
+    height:0.2vh;
+    background-color: #000000;
+    margin-top: 72%;
+    left: 25vw;
+    z-index: 1;
+}
+
+
+.circle {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(39, 91, 202); /* Original color */
+    border-radius: 50%; /* Makes the element circular */
+    position: absolute; /* Allows positioning with top, right, bottom, left */
+    margin-top: 72%; /* Adjust vertical position */
+    left: 27vw; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Centers the element relative to its current position */
+    transition: background-color 0.3s ease-in; /* Smooth transition for background color change */
+    z-index: 2;
+}
+
+/* Change color and pointer cursor on hover */
+.circle:hover {
+    background-color: rgb(255, 255, 255); /* Changes to red when hovered */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border: 3px solid black;
+}
+.circle1{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(39, 91, 202); /* Original color */
+    border-radius: 50%; /* Makes the element circular */
+    position: absolute; /* Allows positioning with top, right, bottom, left */
+    margin-top: 72%; /* Adjust vertical position */
+    left: 41.5vw; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Centers the element relative to its current position */
+    transition: background-color 0.3s ease-in; /* Smooth transition for background color change */
+    z-index: 2;
+}
+
+/* Change color and pointer cursor on hover */
+.circle1:hover {
+    background-color: rgb(255, 255, 255); /* Changes to red when hovered */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border: 3px solid black;
+}
+
+.circle2{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(39, 91, 202); /* Original color */
+    border-radius: 50%; /* Makes the element circular */
+    position: absolute; /* Allows positioning with top, right, bottom, left */
+    margin-top: 72%; /* Adjust vertical position */
+    right: 41vw; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Centers the element relative to its current position */
+    transition: background-color 0.3s ease-in; /* Smooth transition for background color change */
+    z-index: 2;
+}
+
+/* Change color and pointer cursor on hover */
+.circle2:hover {
+    background-color: rgb(255, 255, 255); /* Changes to white when hovered */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border: 3px solid black;
+}
+
+.circle3{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(39, 91, 202); /* Original color */
+    border-radius: 50%; /* Makes the element circular */
+    position: absolute; /* Allows positioning with top, right, bottom, left */
+    margin-top: 72%; /* Adjust vertical position */
+    right: 26vw; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Centers the element relative to its current position */
+    transition: background-color 0.3s ease-in; /* Smooth transition for background color change */
+    z-index: 2;
+}
+
+/* Change color and pointer cursor on hover */
+.circle3:hover {
+    background-color: rgb(255, 255, 255); /* Changes to red when hovered */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border: 3px solid black;
+}
+
+.text-under{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    gap: 53px;
+    margin-top: 73%;
+    left: 23vw;
+}
+
+.products-image {
+    position: absolute;
+    height: 60vh;
+    width: 49.4vw;
+    background-color: #000000;
+    margin-top: 82%;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.products-image:hover {
+    transform: translateY(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.products-image img {
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.products-image:hover img {
+    transform: scale(1.05);
+}
+
+.products-image h2 {
+    margin-top: 53%;
+    position: absolute;
+    font-size: 40px;
+    z-index: 4;
+    text-decoration: none;
+    color: #ffffff;
+    left: 4vw;
+    transition: transform 0.4s ease, color 0.4s ease;
+    transition: transform 0.4s ease;
+}
+
+.products-image:hover h2 {
+    transform: translateY(0%);
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+.products-image i {
+    position: absolute;
+    top: 89.5%;
+    left: 22vw;
+    font-size: 24px;
+    color: #ffffff;
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateX(20px);  /* Move it to the right initially */
+}
+
+.products-image:hover i {
+    opacity: 1;  /* Fade in when hovered */
+    transform: translateX(0);  /* Bring it back to its original position */
+}
+
+
+.products2-image{
+    position: absolute;
+    height: 60vh;
+    width: 49.4vw;
+    background-color: #000000;
+    margin-top: 82%;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    right: 0;
+}
+
+.products2-image:hover {
+    transform: translateY(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.products2-image img{
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.products2-image:hover img {
+    transform: scale(1.05);
+}
+
+.products2-image h2 {
+    margin-top: 53%;
+    position: absolute;
+    font-size: 40px;
+    z-index: 4;
+    text-decoration: none;
+    color: #ffffff;
+    left: 4vw;
+    transition: transform 0.4s ease, color 0.4s ease;
+    transition: transform 0.4s ease;
+}
+
+.products2-image:hover h2 {
+    transform: translateY(0%);
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+.products2-image i {
+    position: absolute;
+    top: 89.5%;
+    left: 15.5vw;
+    font-size: 24px;
+    color: #ffffff;
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateX(20px);  /* Move it to the right initially */
+}
+
+.products2-image:hover i {
+    opacity: 1;  /* Fade in when hovered */
+    transform: translateX(0);  /* Bring it back to its original position */
+}
+
+
+
+.text-rectangle {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+    background-color: #002E5D;
+    margin-top: 112.5%;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+}
+
+.text-rectangle h2{
+    font-size: 40px;
+}
+
+.text-rectangle p{
+    margin-top: -1%;
+}
+
+.text-rectangle .but{
+    margin-top: 1%;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10px;
+    font-family: "Advent Pro", sans-serif;
+    background-color: #ffffff; /* Initial background color */
+    color: rgb(0, 0, 0); /* Initial text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add some padding for a button-like appearance */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.text-rectangle .but:hover {
+    background-color: #fbff00; /* Darker blue on hover */
+    color: #000000; /* White text on hover */
+}
+
+.rect{
+    position: absolute;
+    margin-top:127.5% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

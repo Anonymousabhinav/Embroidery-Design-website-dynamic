@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#" class="menu-item"><i class="fas fa-box"></i> Products</a>
+                <a href="#" class="menu-item"><i class="fas fa-tags"></i> Flash Sales</a>
+                <a href="#" class="menu-item"><i class="fas fa-users"></i> Customers</a>
+                <a href="#" class="menu-item"><i class="fas fa-list"></i> Order List</a>
+                <a href="#" class="menu-item active"><i class="fas fa-chart-bar"></i> Report</a>
+                <a href="#" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" class="menu-item"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="header">
+                <h1>Report Analysis</h1>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <img src="user-avatar.png" alt="User Avatar" class="user-avatar">
+                </div>
+            </div>
+            <div class="content">
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Sales</h3>
+                        <p class="value">$34,456.00</p>
+                        <p class="change"><i class="fas fa-arrow-up"></i> 14% in the last month</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Order</h3>
+                        <p class="value">3456</p>
+                        <p class="change negative"><i class="fas fa-arrow-down"></i> 17% in the last month</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Revenue</h3>
+                        <p class="value">$1,456.00</p>
+                        <p class="change"><i class="fas fa-arrow-up"></i> 14% in the last month</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Customer</h3>
+                        <p class="value">42,456</p>
+                        <p class="change negative"><i class="fas fa-arrow-down"></i> 11% in the last month</p>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="chart revenue-chart">
+                        <h3>Revenue</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="chart sales-by-location">
+                        <h3>Sales By Location</h3>
+                        <div class="map">[Map]</div>
+                        <ul>
+                            <li>New York - 72K</li>
+                            <li>San Francisco - 39K</li>
+                            <li>Sydney - 25K</li>
+                            <li>Singapore - 61K</li>
+                        </ul>
+                    </div>
+                    <div class="chart total-sales-chart">
+                        <h3>Total Sales</h3>
+                        <canvas id="totalSalesChart"></canvas>
+                    </div>
+                </div>
+                <div class="tables">
+                    <div class="table top-selling-products">
+                        <h3>Top Selling Products</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Shirt</td>
+                                    <td>$76.89</td>
+                                    <td>Man Cloths</td>
+                                    <td>128</td>
+                                    <td>$6,647.15</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td>T-Shirt</td>
+                                    <td>$79.80</td>
+                                    <td>Women Cloths</td>
+                                    <td>89</td>
+                                    <td>$6,647.15</td>
+                                    <td>...</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table monthly-target">
+                        <h3>Monthly Target</h3>
+                        <div class="target-chart">
+                            <!-- Placeholder for the progress chart -->
+                            <div class="progress-circle">
+                                75.34%
+                            </div>
+                        </div>
+                        <p>You earn $3267 today, it's higher than last month, keep up your good trends!</p>
+                        <div class="target-stats">
+                            <p>Target: $25k</p>
+                            <p>Revenue: $18k</p>
+                            <p>Total: $1.8k</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

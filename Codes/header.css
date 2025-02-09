@@ -1,0 +1,173 @@
+*{
+    font-family: "Advent Pro", sans-serif;
+}
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+    
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+    font-family: "Advent Pro", sans-serif;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.cart-and-login {
+    position: absolute;
+    z-index: 10;
+    top: 30px; /* Adjust vertical positioning as needed */
+    right: 10px; /* Adjust horizontal positioning as needed */
+    display: flex; /* Aligns items horizontally */
+    gap: 10px; /* Space between cart and login button */
+}
+
+.cart-button {
+    position: relative;
+}
+
+.cart-button a {
+    display: inline-block;
+    color: rgb(0, 0, 0); /* Text color for the cart button */
+    text-decoration: none;
+
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 12px; /* Font size */
+    text-align: center; /* Center the text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.cart-button a:hover {
+    background-color: #333333; /* Darker color on hover */
+    color: #ffffff;
+}
+
+#badge {
+    background-color: #ff0000; /* Background color for the badge */
+    color: #ffffff; /* Text color for the badge */
+    border-radius: 50%; /* Circular badge */
+    padding: 5px 10px; /* Padding inside the badge */
+    margin-left: 10px; /* Space between text and badge */
+    font-weight: bold; /* Bold text */
+    font-size: 14px; /* Font size for the badge */
+}
+
+.login-button {
+    position: relative;
+}
+
+.login-button a {
+    display: inline-block; /* Ensures button styling */
+}
+
+.login-button button {
+    width: 130px; /* Width of the button */
+    height: 45px; /* Height of the button */
+    font-size: 12px; /* Font size */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Rounded corners */
+    background-color: #000000; /* Background color */
+    color: rgb(255, 255, 255); /* Text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kay Kay Embroidery - Create Account</title>
+    <link rel="shortcut icon" href="kaykayembroideries_logo.png" />
+    <link rel="stylesheet" href="create_ac_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <!-- Creating a logo for the webpage -->
+                    <img src="logo.png" alt="logo_image" sizes="10px" class="logo">
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="rectangle"></div> <!-- New rectangle div -->
+    </div>
+
+    <!-- Welcome text -->
+    <div class="logintext1">
+        <h2>"New here? Create 
+            <br>an account to join 
+            <br>our community and 
+            <br>enjoy exclusive benefits 
+            <br>and features."</h2>
+    </div>
+
+    <!-- Heading -->
+    <div class="logintext2">
+        <h2>Create a new <br> account</h2>
+    </div>
+
+    <!-- Registration form -->
+    <div class="loginform">
+        <form action="create.php" method="post">
+
+            <!-- First name -->
+            <div class="firstname">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+        
+            <!-- Last name -->
+            <div class="lastname">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+        
+            <!-- Username -->
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+        
+            <!-- Email -->
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        
+            <!-- Create password -->
+            <div class="createpassword">
+                <label for="createpassword">Create Password</label>
+                <input type="password" id="createpassword" name="createpassword" required>
+            </div>
+        
+            <!-- Confirm password -->
+            <div class="confirmingpassword">
+                <label for="confirmingpassword">Confirm Password</label>
+                <input type="password" id="confirmingpassword" name="confirmingpassword" required>
+                <span id="errormessage" style="color: red; display: none;">
+                    Error: The passwords you have typed do not match.
+                </span>
+            </div>
+        
+            <!-- Submit button -->
+            <div class="buttoncreate">
+                <button type="submit">Create account</button>
+            </div>
+        
+            <!-- Optional text -->
+            <h4 class="ortext">Or</h4>
+        
+            <!-- Link to login page -->
+            <div class="navtonew">
+                <h2>Welcome back! <a href="login.html">Login.</a></h2>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

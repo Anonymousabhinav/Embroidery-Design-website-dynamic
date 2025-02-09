@@ -1,0 +1,458 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #ddd;
+    height: 100%;;
+}
+
+/* Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+}
+
+/* Rectangle Styles */
+.rectangle {
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100vw; /* Full width of the viewport */
+    max-width: 100%; /* Full width of the viewport */
+    height: 40vh; /* Increased height (default height) */
+    background-color: #ffffff; /* Background color */
+    border: 1px solid black; /* Border color */
+    box-sizing: border-box; /* Include border in width and height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    padding: 0 10px; /* Horizontal padding to avoid content touching edges */
+    z-index: 1; /* Ensure it's above other content */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .rectangle {
+        height: 30vh; /* Adjusted height for smaller screens */
+        padding: 0 5px; /* Reduced horizontal padding */
+    }
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 1200px) {
+    .rectangle {
+        height: 20vh; /* Adjusted height for larger screens */
+        padding: 0 20px; /* Increased horizontal padding */
+    }
+}
+
+/* Additional responsiveness */
+@media (max-width: 480px) {
+    .rectangle {
+        height: 25vh; /* Further adjusted height for very small screens */
+        padding: 0 2px; /* Further reduced horizontal padding */
+    }
+}
+
+
+
+/* Navigation Section */
+.navigations {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Adjusted for larger screens */
+    font-size: 19px; /* Base font size */
+    position: relative; /* Position relative to allow absolute positioning inside */
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    padding: 20px 0; /* Added vertical padding for spacing */
+    margin-top: 80px; /* Adjusted margin to push down */
+    color: #030303;
+    font-family: "Advent Pro",sans-serif;
+    font-weight: normal;
+}
+
+/* Navigation Links */
+.navigations a {
+    text-decoration: none;
+    color: inherit; /* Default text color */
+    padding: 5px; /* Space around the text */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
+}
+
+/* Hover Effect */
+.navigations a:hover {
+    color: #007BFF; /* Change to the desired hover color */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px; /* Adjusted padding for touch devices */
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Adjusted width for better responsiveness */
+    z-index: 4;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover for desktop */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navigations {
+        font-size: 18px; /* Smaller font size for smaller screens */
+        gap: 10px; /* Reduced gap for smaller screens */
+        padding: 10px 0; /* Reduced vertical padding */
+        margin-top: 20px; /* Adjusted margin for better spacing */
+    }
+
+    .dropdown-content {
+        width: 100%; /* Full width on smaller screens */
+        top: 100%; /* Position directly below the button */
+    }
+
+    .dropdown-content a {
+        padding: 15px; /* Increased padding for better touch interaction */
+    }
+
+    /* Show dropdown when button is clicked on mobile */
+    .dropdown-button.active + .dropdown-content {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigations {
+        font-size: 16px; /* Further reduced font size */
+        flex-direction: column; /* Stack items vertically */
+        gap: 5px; /* Further reduced gap */
+        padding: 10px 0; /* Reduced vertical padding */
+    }
+
+    .dropdown-content {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+:root {
+    --clr-primary: #000000;
+    --clr-body: #ddd;
+    --clr-bg: #fff;
+}
+
+/* Content Wrapper */
+.content {
+    position: absolute;
+    top: 2.5%;
+    right: 10%;
+    z-index: 2;
+}
+
+:root {
+    --clr-primary: #000000;
+    --clr-body: #ddd;
+    --clr-bg: #fff;
+}
+
+/* Content Wrapper */
+.content {
+    position: absolute;
+    top: 5%; /* Adjusted to bring the search component a little down */
+    right: 5%; /* Moved the search component to the left */
+    z-index: 2;
+}
+
+/* Search Container */
+.search {
+    --size: 55px; /* Base size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners */
+    overflow: hidden;
+    font-size: 1em; /* Base font size */
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    padding: 15px; /* Adjusted padding to 15px */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Space inside the input field */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Font size of the button */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size);
+    height: var(--size);
+    background-color: white;
+    z-index: 3;
+    display: flex; /* Center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Search Container Hover/Focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+/* Search Input Field on Hover/Focus */
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust width */
+}
+
+/* Search Submit Button on Hover/Focus */
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Search Submit Button Hover Effect */
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+/* Responsive Styles for Tablets */
+@media (max-width: 1024px) {
+    .search {
+        --size: 50px; /* Smaller size */
+        padding: 15px; /* Adjusted padding */
+    }
+
+    .search:hover,
+    .search:focus-within {
+        width: 250px; /* Adjusted width */
+    }
+
+    .search:hover .search__input,
+    .search:focus-within .search__input {
+        width: calc(100% - 50px); /* Adjusted input width */
+    }
+
+    .search__submit {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .search {
+        --size: 45px; /* Smaller size */
+        padding: 15px; /* Adjusted padding */
+    }
+
+    .search:hover,
+    .search:focus-within {
+        width: 200px; /* Adjusted width */
+    }
+
+    .search:hover .search__input,
+    .search:focus-within .search__input {
+        width: calc(100% - 45px); /* Adjusted input width */
+    }
+
+    .search__submit {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Responsive Styles for Very Small Screens */
+@media (max-width: 480px) {
+    .search {
+        --size: 40px; /* Further smaller size */
+        padding: 15px; /* Adjusted padding */
+    }
+
+    .search:hover,
+    .search:focus-within {
+        width: 180px; /* Adjusted width */
+    }
+
+    .search:hover .search__input,
+    .search:focus-within .search__input {
+        width: calc(100% - 40px); /* Adjusted input width */
+    }
+
+    .search__submit {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Login/Signup Button */
+.loginbutton {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    z-index: 3;
+}
+
+.loginbutton button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #030303;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.loginbutton button:hover {
+    background-color: #ddd;
+}
+
+/* Logo Again Section */
+.logo-again {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.logo-again img {
+    max-width: 80%;
+}
+
+/* Gallery Images Section */
+.galleryimage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.galleryimage img {
+    width: 100%;
+    height: auto;
+}
+
+/* Top Designs Section */
+.top {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Why They Choose Us Section */
+.theybox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.rectangle1, .rectangle2, .rectangle3 {
+    border: 2px solid #ddd;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.rectangle1 img, .rectangle2 img, .rectangle3 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .navigations {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .search__input {
+        width: 80%;
+    }
+
+    .loginbutton button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .galleryimage {
+        grid-template-columns: 1fr;
+    }
+
+    .theybox {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,341 @@
+
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+
+.rectangle {
+    width: 100vw;
+    height: 10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top: -5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation {
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.bar:hover {
+    background-color: #ffffff;
+}
+
+.dropdown2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    padding: 10px;
+    z-index: 3;
+    text-align: center;
+    width: 200px;
+}
+
+.dropdown2 a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+
+.abtrectangle {
+    position: absolute;
+    width: 100vw;
+    height: 35vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden;
+}
+
+.abtrectangle h2 {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 100px;
+    font-family: "Advent Pro", sans-serif;
+    left: 18vw;
+    z-index: 3; /* Ensures the text stays on top of the video */
+    color: white; /* Adjust color to ensure readability over video */
+}
+
+.abtrectangle p {
+    position: absolute;
+    margin-top: 11.5%;
+    font-size: 25px;
+    left: 30vw;
+    z-index: 3; /* Ensures the text stays on top of the video */
+    color: white; /* Adjust color to ensure readability over video */
+}
+
+.abtrectangle video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Sends the video behind the text */
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+/* Form Container */
+#orderForm {
+    max-width: 800px;
+    margin: 20% auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    #orderForm {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+.form-fill {
+    position: absolute;
+    margin-top: -20%;
+    margin-left: 35.4vw;
+    height: auto;
+    width: 30vw;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.rect{
+    position: absolute;
+    top:180% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

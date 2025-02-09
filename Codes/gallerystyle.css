@@ -1,0 +1,1230 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 3;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+/* Base Styles */
+.container-logo {
+    position: absolute; 
+    width: 100%; /* Full width */
+    height: 300px; /* Default height */
+    background-color: transparent; 
+    z-index: 4;
+}
+
+.logo-again {
+    position: relative; /* Position relative to .container-logo */
+    top: 62%;
+    left: 0;
+    transform: translateY(-50%); /* Center vertically */
+    background-color: #ffffff;
+    width: 936px; /* Default width */
+    height: 420px; /* Default height */
+    z-index: 4;
+}
+
+.logo-again img {
+    position: absolute;
+    top: 0;
+    width: 450px; /* Default width */
+    height: auto; /* Maintain aspect ratio */
+    left: 170px; /* Default position */
+    z-index: 4;
+}
+
+.rectangle-logo {
+    position: absolute;
+    width: 400px; /* Default width */
+    height: 50px; /* Default height */
+    background-color: #ffffff;
+    z-index: 4;
+}
+
+/* Responsive Styles */
+
+/* For Tablets */
+@media (max-width: 1024px) {
+    .container-logo {
+        height: 300px; /* Adjust height for tablets */
+        left: 0;
+    }
+
+    .logo-again {
+        width: 70%; /* Adjust width for tablets */
+        height: auto; /* Adjust height for tablets */
+        top: 13%;
+        left: 5%; /* Center horizontally */
+        transform: translateY(-50%); /* Keep vertical centering */
+    }
+
+    .logo-again img {
+        width: 50%; /* Adjust width for tablets */
+        left: 0; /* Adjust position for tablets */
+    }
+
+    .rectangle-logo {
+        width: 80%; /* Adjust width for tablets */
+        height: auto; /* Adjust height proportionally */
+        left: 0;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    .container-logo {
+        height: 100px; /* Adjust height for mobile devices */
+    }
+
+    .logo-again {
+        width: 45%; /* Adjust width for mobile devices */
+        height: auto; /* Adjust height for mobile devices */
+        top: 25%;
+        left: 4%; /* Center horizontally */
+    }
+
+    .logo-again img {
+        width: 80%; /* Adjust width for mobile devices */
+        left: 10%; /* Adjust position for mobile devices */
+    }
+
+    .rectangle-logo {
+        width: 80%; /* Adjust width for mobile devices */
+        height: auto; /* Adjust height proportionally */
+    }
+}
+
+/* For Very Small Screens */
+@media (max-width: 480px) {
+    .container-logo {
+        height: 150px; /* Adjust height for very small screens */
+    }
+
+    .logo-again {
+        width: 100%; /* Adjust width for very small screens */
+        height: auto; /* Adjust height for very small screens */
+        top: 30%;
+        left: 0; /* Full width */
+    }
+
+    .logo-again img {
+        width: 90%; /* Adjust width for very small screens */
+        left: 5%; /* Adjust position for very small screens */
+    }
+
+    .rectangle-logo {
+        width: 90%; /* Adjust width for very small screens */
+        height: auto; /* Adjust height proportionally */
+    }
+}
+
+
+
+
+.back-image1 {
+    position: absolute;
+    top: 57%;
+    left: 0;
+    height: 168.8vh; /* Adjust to your desired height */
+    width: auto; /* Keep auto to maintain aspect ratio */
+    z-index: 3;
+    border-bottom-right-radius: 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 1024px){
+        top: 63%;
+        height: 96vh;
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        width: 50%;
+        top: 45%;
+        height: 70vh; /* Adjust height for smaller screens */
+        border-bottom-right-radius: 30px; /* Smaller radius on small screens */
+    }
+
+    @media (max-width: 480px) {
+        top: 65%;
+        height: 50vh; /* Further adjust height for very small screens */
+        border-bottom-right-radius: 20px; /* Smaller radius on very small screens */
+    }
+}
+
+
+.back-image2 {
+    position: absolute;
+    top: 15.66%;
+    right: 0;
+    height: 150vh; /* Adjust height based on viewport */
+    width: auto; /* Keep width auto to maintain aspect ratio */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 1024px){
+        top: 10%;
+        height: 90vh;
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        top: 10%;
+        width: 50vw;
+        height: 70vh; /* Adjust height for tablets or smaller screens */
+    }
+
+    @media (max-width: 480px) {
+        top: 25%;
+        height: 50vh; /* Further adjust height for very small screens */
+    }
+}
+
+
+.text h2 {
+    position: absolute;
+    top: 170%;
+    right: 30%; /* Use percentage for responsiveness */
+    font-size: 5vw; /* Responsive font size using viewport width */
+    font-family: "Advent Pro", sans-serif;
+
+    @media (max-width: 1024px){
+        top: 116%;
+        right: 28%;
+        font-size: 8vh;
+    }
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        top: 85%;
+        right: 25%;
+        font-size: 6vw; /* Increase font size for smaller screens */
+    }
+
+    @media (max-width: 480px) {
+        top: 190%;
+        right: 5%;
+        font-size: 10vw; /* Further increase font size for very small screens */
+    }
+}
+
+.text p {
+    position: absolute;
+    top: 185%;
+    right: 4%; /* Use percentage for responsiveness */
+    font-size: 3vw; /* Responsive font size using viewport width */
+    align-items: center;
+    font-family: "Advent Pro", sans-serif;
+
+    @media (max-width: 1024px){
+        top: 130%;
+        right: 12%;
+        font-size: 3vh;
+    }
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        top: 95%;
+        right: 3%;
+        font-size: 3vw; /* Adjust font size for smaller screens */
+    }
+
+    @media (max-width: 480px) {
+        top: 205%;
+        right: 2%;
+        font-size: 6vw; /* Further adjust font size for very small screens */
+    }
+}
+
+
+.images {
+    position: absolute;
+    top: 228.7%;
+    width: 50vw; /* Responsive width using viewport width */
+    height: 115vh;
+    border-top-right-radius: 90vw; /* Adjusted for responsiveness */
+    right: 60%; /* Position it on the left side */
+    object-fit: cover; /* Crop the image */
+    object-position: right; /* Align the image to the right */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 1024px){
+        top: 162%;
+        width: 90vw;
+        right: 50%;
+        border-top-right-radius: 60vw;
+        height: 75vh;
+    }
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+        top: 115.5%;
+        height: 60vh;
+        width: 70vw; /* Increase width for smaller screens */
+        border-top-right-radius: 60vw; /* Adjust border radius */
+        right:50%; /* Adjust right position */
+    }
+
+    @media (max-width: 480px) {
+        top: 250%;
+        width: 95vw; /* Further increase width for very small screens */
+        border-top-right-radius: 10vw; /* Further adjust border radius */
+        right: 2%; /* Further adjust right position */
+    }
+}
+
+.galleryimage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-image1,
+.gallery-image2,
+.gallery-image3,
+.gallery-image4 {
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Individual image styles with responsive adjustments */
+.gallery-image1 {
+    top: 245%;
+    left: 10%; /* Responsive positioning */
+    width: 18vw; /* Responsive width */
+    height: 95vh; /* Responsive height */
+    clip-path: inset(0 0 0 5%);
+}
+
+.gallery-image1 img {
+    width: 140%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.gallery-image2 {
+    top: 278.9%;
+    left: 45%; /* Responsive positioning */
+    width: 16vw; /* Responsive width */
+    height: 63vh; /* Responsive height */
+    clip-path: inset(0 0 0 35%);
+}
+.gallery-image2 img {
+    width: 130%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.gallery-image3 {
+    top: 278%;
+    right: 22%; /* Responsive positioning */
+    width: 17vw; /* Responsive width */
+    height: 63vh; /* Responsive height */
+    clip-path: inset(0 0 0 20%);
+}
+.gallery-image3 img {
+    width: 127%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.gallery-image4 {
+    top: 278%;
+    right: 4%; /* Responsive positioning */
+    width: 17.8vw; /* Responsive width */
+    height: 63vh; /* Responsive height */
+    clip-path: inset(0 0 0 23%);
+}
+.gallery-image4 img {
+    width: 121%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Hover and active effects */
+.gallery-image1:hover,
+.gallery-image2:hover,
+.gallery-image3:hover,
+.gallery-image4:hover {
+    transform: scale(1.1);
+    border-color: #fff;
+}
+
+.gallery-image1.active,
+.gallery-image2.active,
+.gallery-image3.active,
+.gallery-image4.active {
+    transform: scale(1.1);
+    z-index: 20;
+    border-color: #fff;
+}
+
+@media (max-width: 1024px){
+    .gallery-image1,
+    .gallery-image2,
+    .gallery-image3,
+    .gallery-image4 {
+        width: 70vw; /* Adjust width for smaller screens */
+        height: 35vh; /* Adjust height for smaller screens */
+        clip-path: inset(0 0 0 8%); /* Adjust cropping */
+        top: auto; /* Reset top positioning */
+        left: 5%; /* Adjust left positioning for uniformity */
+        right: auto; /* Reset right positioning */
+    }
+
+    .gallery-image1 {
+        top: 170%; /* Adjust top position for smaller screens */
+        width: 28vw;
+        height: 55vw;
+        left: 12%;
+        clip-path: inset(0 23% 1% 10%);
+    }
+
+    .gallery-image2 {
+        top: 196%; /* Adjust top position for smaller screens */
+        width: 17vw;
+        height: 33vw;
+        left: 45%;
+        clip-path: inset(0 5% 0 40%);
+    }
+    .gallery-image1 img{
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-image3 {
+        top: 196%; /* Adjust top position for smaller screens */
+        width: 17vw;
+        height: 33vw;
+        left: 60%;
+        clip-path: inset(0 5% 0 40%);
+    }
+
+    .gallery-image4 {
+        top: 196%; /* Adjust top position for smaller screens */
+        width: 18vw;
+        height: 32vw;
+        left: 77%;
+        clip-path: inset(0 1% 0 20%);
+    }
+}
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .gallery-image1,
+    .gallery-image2,
+    .gallery-image3,
+    .gallery-image4 {
+        width: 70vw; /* Adjust width for smaller screens */
+        height: 35vh; /* Adjust height for smaller screens */
+        clip-path: inset(0 0 0 8%); /* Adjust cropping */
+        top: auto; /* Reset top positioning */
+        left: 5%; /* Adjust left positioning for uniformity */
+        right: auto; /* Reset right positioning */
+    }
+
+    .gallery-image1 {
+        top: 119%; /* Adjust top position for smaller screens */
+        width: 33vw;
+        height: 63vw;
+        left: 12%;
+        clip-path: inset(0 23% 1% 10%);
+    }
+
+    .gallery-image2 {
+        top: 140%; /* Adjust top position for smaller screens */
+        width: 20vw;
+        height: 38vw;
+        left: 43%;
+        clip-path: inset(0 5% 0 40%);
+    }
+    .gallery-image1 img{
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-image3 {
+        top: 140%; /* Adjust top position for smaller screens */
+        width: 21vw;
+        height: 39vw;
+        left: 58%;
+        clip-path: inset(0 5% 0 40%);
+    }
+
+    .gallery-image4 {
+        top: 140%; /* Adjust top position for smaller screens */
+        width: 22vw;
+        height: 39vw;
+        left: 77%;
+        clip-path: inset(0 1% 0 20%);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image1,
+    .gallery-image2,
+    .gallery-image3,
+    .gallery-image4 {
+        width: 90vw; /* Adjust width for very small screens */
+        height: 30vh; /* Adjust height for very small screens */
+        clip-path: inset(0 0 0 5%); /* Adjust cropping */
+        top: auto; /* Reset top positioning */
+        left: 5%; /* Uniform left positioning */
+        right: auto; /* Reset right positioning */
+    }
+
+    .gallery-image1 {
+        top: 260%; /* Adjust top position */
+    }
+
+    .gallery-image2 {
+        top: 290%;
+    }
+
+    .gallery-image3 {
+        top: 320%;
+    }
+
+    .gallery-image4 {
+        top: 350%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Error code pls check8  above code*/
+/*Error code pls check8*/
+
+
+
+
+
+
+.top h2 {
+    position: absolute;
+    font-size: 8vw; /* Responsive font size using viewport width */
+    z-index: 20;
+    top: 253%;
+    right: 10%; /* Use percentage for responsiveness */
+    font-family: "Alex Brush", cursive;
+}
+
+.top p {
+    position: absolute;
+    font-size: 2vw; /* Responsive font size using viewport width */
+    z-index: 20;
+    top: 271%;
+    right: 5%; /* Use percentage for responsiveness */
+    font-family: "Advent Pro", sans-serif;
+}
+
+@media (max-width: 1024px){
+    .top h2 {
+        font-size: 10vw; /* Increase font size for smaller screens */
+        top: 175%; /* Adjust top position */
+        right: 15%; /* Adjust right position */
+    }
+
+    .top p {
+        font-size: 2.5vw; /* Adjust font size for smaller screens */
+        top: 189%; /* Adjust top position */
+        right: 5%; /* Adjust right position */
+    }
+}
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .top h2 {
+        font-size: 10vw; /* Increase font size for smaller screens */
+        top: 124%; /* Adjust top position */
+        right: 15%; /* Adjust right position */
+    }
+
+    .top p {
+        font-size: 2.5vw; /* Adjust font size for smaller screens */
+        top: 134%; /* Adjust top position */
+        right: 5%; /* Adjust right position */
+    }
+}
+
+@media (max-width: 480px) {
+    .top h2 {
+        font-size: 12vw; /* Further increase font size for very small screens */
+        top: 265%; /* Adjust top position */
+        right: 2%; /* Adjust right position */
+    }
+
+    .top p {
+        font-size: 5vw; /* Adjust font size for very small screens */
+        top: 285%; /* Adjust top position */
+        right: 2%; /* Adjust right position */
+    }
+}
+
+
+
+.theybox {
+    height: 120vh; /* Responsive height using viewport height */
+    width: 95vw; /* Responsive width using viewport width */
+    position: absolute;
+    top: 344%;
+    background-color: #ffffff; /* Fixed background color */
+    z-index: 20;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    margin-left: 2.5%; /* Center the box horizontally */
+    border-radius: 20px; /* Add some rounded corners */
+}
+
+.they-choose h2 {
+    position: absolute;
+    z-index: 30;
+    top: 7%;
+    font-size: 5vw; /* Responsive font size using viewport width */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    font-family: "Advent Pro", sans-serif;
+}
+
+@media (max-width: 1024px){
+    .theybox {
+        height: 60vh; /* Increase height for smaller screens */
+        width: 90vw; /* Adjust width for smaller screens */
+        top: 242%; /* Adjust top position */
+        margin-left: 5%; /* Adjust centering */
+    }
+
+    .they-choose h2 {
+        font-size: 5vw; /* Increase font size for smaller screens */
+        top: 10%; /* Adjust top position */
+        left: 50%; /* Keep centered */
+    }
+}
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .theybox {
+        height: 60vh; /* Increase height for smaller screens */
+        width: 90vw; /* Adjust width for smaller screens */
+        top: 175.5%; /* Adjust top position */
+        margin-left: 5%; /* Adjust centering */
+    }
+
+    .they-choose h2 {
+        font-size: 5vw; /* Increase font size for smaller screens */
+        top: 7%; /* Adjust top position */
+        left: 50%; /* Keep centered */
+    }
+}
+
+@media (max-width: 480px) {
+    .theybox {
+        height: 70vh; /* Further increase height for very small screens */
+        width: 85vw; /* Further adjust width */
+        top: 360%; /* Adjust top position */
+        margin-left: 7.5%; /* Adjust centering */
+    }
+
+    .they-choose h2 {
+        font-size: 12vw; /* Further adjust font size */
+        top: 12%; /* Adjust top position */
+    }
+}
+
+
+
+.topcompanies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with min width */
+    gap: 10px; /* Space between grid items */
+}
+
+/* Common styles for rectangles */
+.rectangle1{
+    position: absolute;
+    overflow: hidden;
+    left: 4cqb;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 250px; /* Adjust spacing below each rectangle */
+}
+.rectangle2{
+    position: absolute;
+    overflow: hidden;
+    left: 650px;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 250px; /* Adjust spacing below each rectangle */
+}
+.rectangle3{
+    position: absolute;
+    overflow: hidden;
+    left: 1250px;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 250px; /* Adjust spacing below each rectangle */
+}
+.rectangle4{
+    position: absolute;
+    overflow: hidden;
+    left: 4cqb;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 700px; /* Adjust spacing below each rectangle */
+}
+.rectangle5{
+    position: absolute;
+    overflow: hidden;
+    left: 650px;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 700px; /* Adjust spacing below each rectangle */
+}
+.rectangle6 {
+    position: absolute;
+    overflow: hidden;
+    left: 1250px;
+    width: 30%; /* Full width of the grid cell */
+    height: 30%; /* Maintain aspect ratio */
+    border-radius: 25px;
+    margin-top: 700px; /* Adjust spacing below each rectangle */
+}
+
+@media (max-width: 1024px){
+    .rectangle1{
+        position: absolute;
+        overflow: hidden;
+        left: 4cqb;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 20px;
+        top: -50px;
+        margin-top: 100px; /* Adjust spacing below each rectangle */
+    }
+    .rectangle2{
+        position: absolute;
+        overflow: hidden;
+        left: 260px;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 20px;
+        top: -50px;
+        margin-top: 250px; /* Adjust spacing below each rectangle */
+    }
+    .rectangle3{
+        position: absolute;
+        overflow: hidden;
+        left: 480px;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 20px;
+        top: -50px;
+        margin-top: 250px; /* Adjust spacing below each rectangle */
+    }
+    .rectangle4{
+        position: absolute;
+        overflow: hidden;
+        left: 4cqb;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 20px;
+        top: 100px;
+        margin-top: 700px; /* Adjust spacing below each rectangle */
+    }
+    .rectangle5{
+        position: absolute;
+        overflow: hidden;
+        left: 260px;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 25px;
+        top: 100px;
+        margin-top: 700px; /* Adjust spacing below each rectangle */
+    }
+    .rectangle6 {
+        position: absolute;
+        overflow: hidden;
+        left: 480px;
+        width: 25%; /* Full width of the grid cell */
+        height: 25%; /* Maintain aspect ratio */
+        border-radius: 20px;
+        top: 100px;
+        margin-top: 700px; /* Adjust spacing below each rectangle */
+    }
+}
+/* Smaller rectangles for responsiveness */
+@media (max-width: 768px) {
+    .rectangle1, .rectangle2, .rectangle3,.rectangle4,.rectangle5,.rectangle6 {
+        aspect-ratio: 1 / 2; /* Adjust aspect ratio for smaller screens */
+        margin-top: 200px; /* Reduce spacing below each rectangle */
+    }
+}
+@media (max-width: 480px) {
+    .rectangle1, .rectangle2, .rectangle3,.rectangle4,.rectangle5,.rectangle6 {
+        aspect-ratio: 4 / 3; /* Adjust aspect ratio for mobile screens */
+        margin-top: 5px; /* Further reduce spacing below each rectangle */
+    }
+}
+
+
+/* Common styles for images */
+.rectangle1 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+.rectangle2 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+.rectangle3 img {    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */}
+.rectangle4 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+.rectangle5 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+.rectangle6 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+
+/* Common blur effect on hover */
+.rectangle1 .blur, .rectangle2 .blur, .rectangle3 .blur ,.rectangle4 .blur,.rectangle5 .blur,.rectangle6 .blur{
+    transition: filter 200ms ease-in-out; /* Smooth transition for blur effect */
+}
+
+.rectangle1:hover .blur, .rectangle2:hover .blur, .rectangle3:hover .blur, .rectangle4:hover .blur, .rectangle5:hover .blur, .rectangle6:hover .blur {
+    filter: blur(5px); /* Apply blur effect on hover */
+}
+
+/* Content styling */
+.rectangle1 .content1, .rectangle2 .content2, .rectangle3 .content3 , .rectangle4 .content4, .rectangle5 .content5, .rectangle6 .content6  {
+    position: absolute;
+    inset: 0; /* Full coverage */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 20;
+    font-family: "Advent Pro", sans-serif;
+    opacity: 0; /* Start with opacity 0 */
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out; /* Smooth transitions */
+}
+
+/* Specific styles for each rectangle */
+.rectangle1 .content1 {
+    font-size: 60px; /* Base font size */
+    transform: translateX(-100%); /* Start off-screen */
+}
+
+.rectangle2 .content2 {
+    font-size: 60px; /* Base font size */
+    transform: translateY(-100%); /* Start off-screen */
+}
+
+.rectangle3 .content3 {
+    font-size: 70px; /* Base font size */
+    transform: translateX(100%); /* Start off-screen */
+}
+.rectangle4 .content4 {
+    font-size: 70px; /* Base font size */
+    transform: translateX(-100%); /* Start off-screen */
+}
+
+.rectangle5 .content5 {
+    font-size: 70px; /* Base font size */
+    transform: translateY(100%); /* Start off-screen */
+}
+
+.rectangle6 .content6 {
+    font-size: 70px; /* Base font size */
+    transform: translateX(100%); /* Start off-screen */
+}
+
+
+/* Hover effects */
+.rectangle1:hover .content1 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateX(0); /* Slide into view */
+}
+
+.rectangle2:hover .content2 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateY(0); /* Slide into view */
+}
+
+.rectangle3:hover .content3 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateX(0); /* Slide into view */
+}
+
+/* Hover effects */
+.rectangle4:hover .content4 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateX(0); /* Slide into view */
+}
+
+.rectangle5:hover .content5 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateY(0); /* Slide into view */
+}
+
+.rectangle6:hover .content6 {
+    opacity: 1; /* Fade in on hover */
+    transform: translateX(0); /* Slide into view */
+}
+
+@media (max-width: 1024px){
+    .rectangle1 .content1, .rectangle2 .content2, .rectangle3 .content3,  .rectangle4 .content4, .rectangle5 .content5 ,.rectangle6 .content6 {
+        font-size: 25px; /* Adjust font size for tablets */
+    }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .rectangle1 .content1, .rectangle2 .content2, .rectangle3 .content3,  .rectangle4 .content4, .rectangle5 .content5 ,.rectangle6 .content6 {
+        font-size: 15px; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .rectangle1 .content1, .rectangle2 .content2, .rectangle3 .content3,  .rectangle4 .content4, .rectangle5 .content5 ,.rectangle6 .content6 {
+        font-size: 30px; /* Adjust font size for mobile screens */
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+}
+
+.rect{
+    position: absolute;
+    margin-top:225% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

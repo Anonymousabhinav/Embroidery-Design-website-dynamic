@@ -1,0 +1,1746 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 3;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.producttext{
+    position: absolute;
+    margin-top: 3.5%;
+    font-size: 100px;
+    font-family: "Advent Pro",sans-serif;
+    color: #484848;
+    left: 70px;
+}
+
+.producttext2{
+    position: absolute;
+    margin-top: 7%;
+    font-size: 30px;
+    font-family: "Advent Pro",sans-serif;
+    color: #484848;
+    left: 420px;
+    backdrop-filter: none;
+}
+
+
+.type1{
+    color: #484848;
+    position: absolute;
+    margin-top: 12%;
+    left: 100px;
+    font-size: 50px;
+    font-family: "Advent Pro",sans-serif;
+}
+
+
+.background {
+    position: absolute;
+    width: 100vw; /* Set the desired width of the container */
+    height: 100vh; /* Set the desired height of the container */
+    background-color: #C7AB95; /* Background color if needed */
+    margin-top: 0%;
+    left: 0; /* Ensure the container is positioned correctly */
+    overflow: hidden; /* Hide the overflowing part of the image */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.rectangle2{
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    left: 80px;
+    top: 43%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container:hover .rectangle2{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle2:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+
+
+.rectangle3{
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    left: 535px;
+    top: 43%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container2:hover .rectangle3{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle3:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+
+.rectangle4{
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    right: 520px;
+    top: 43%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container3:hover .rectangle4{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle4:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+
+.rectangle5 {
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    right: 70px;
+    top: 43%;
+    border-radius: 30px; /* Rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container4:hover .rectangle5{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+.rectangle5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle5:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+
+.hover-button {
+    background-color: #000000; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Position for the transformation */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    right: 10px;
+    top:65%;
+}
+
+.hover-button:hover {
+    transform: translateX(10px); /* Move right */
+}
+
+.hover-button:active {
+    transform: translateX(-10px); /* Move left when clicked */
+}
+
+.hover-button2 {
+    background-color: #000000; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Position for the transformation */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    left: 10px;
+    top:65%;
+}
+
+.hover-button2:hover {
+    transform: translateX(-10px); /* Move right */
+}
+
+.hover-button2:active {
+    transform: translateX(10px); /* Move left when clicked */
+}
+
+
+/*4x4 Lace*/
+
+.type1-design{
+    position: absolute;
+    z-index: 10;
+    margin-top: 52%;
+    left: 15vw;
+}
+.type1-design h2{
+    color: #484848;
+    text-decoration: underline;
+    text-decoration-color: #484848;
+    font-size: 50px;
+}
+
+.rectanglelace2{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 280px;
+    top: 128%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.containerlace:hover .rectanglelace2,
+.containerlace:hover .rectanglelace9{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectanglelace2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace2:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectanglelace9{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace9 h2{
+    position: absolute;
+    margin-left: 1.3vw; /* Adjust this value as needed */
+    width: 13vw;
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 6%;
+    text-align: center;
+}
+
+.rectanglelace9 p1{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectanglelace3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 128%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.containerlace2:hover .rectanglelace3,
+.containerlace2:hover .rectanglelace8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectanglelace3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace3:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectanglelace8{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace8 h2{
+    position: absolute;
+    margin-left: 1.3vw; /* Adjust this value as needed */
+    width: 13vw;
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 6%;
+    text-align: center;
+}
+
+.rectanglelace8 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+
+.rectanglelace4{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 615px;
+    top: 128%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.containerlace3:hover .rectanglelace4,
+.containerlace3:hover .rectanglelace7{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectanglelace4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace4:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectanglelace7{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace7 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectanglelace7 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectanglelace5{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 260px;
+    top: 128%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.containerlace4:hover .rectanglelace5,
+.containerlace4:hover .rectanglelace6 {
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectanglelace5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectanglelace5:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectanglelace6{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.rectanglelace6 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectanglelace6 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+/*All Over*/
+
+.type2-design{
+    position: absolute;
+    z-index: 10;
+    margin-top: 83%;
+    left: 16vw;
+}
+.type2-design h2{
+    color: #484848;
+    text-decoration: underline;
+    text-decoration-color: #484848;
+    font-size: 50px;
+}
+
+.rectangle-all2{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 280px;
+    top: 190%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-all:hover .rectangle-all2,
+.container-all:hover .rectangle-all9{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-all2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all2:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-all9{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all9 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectangle-all9 p1{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-all3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 190%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-all2:hover .rectangle-all3,
+.container-all2:hover .rectangle-all8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-all3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all3:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-all8{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all8 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectangle-all8 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-all4{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 615px;
+    top: 190%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-all3:hover .rectangle-all4,
+.container-all3:hover .rectangle-all7{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-all4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all4:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-all7{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all7 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectangle-all7 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-all5{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 260px;
+    top: 190%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-all4:hover .rectangle-all5,
+.container-all4:hover .rectangle-all6 {
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-all5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all5:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-all6{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-all6 h2{
+    position: absolute;
+    left: 0vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+}
+
+.rectangle-all6 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*8 X 4 Border*/
+
+.type3-design{
+    position: absolute;
+    z-index: 10;
+    margin-top: 115%;
+    left: 15vw;
+}
+.type3-design h2{
+    color: #484848;
+    text-decoration: underline;
+    text-decoration-color: #484848;
+    font-size: 50px;
+}
+
+.rectangle-border2{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 280px;
+    top: 255%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-border:hover .rectangle-border2,
+.container-border:hover .rectangle-border9{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-border2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border2:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-border9{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border9 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-border9 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-border3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 255%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-border2:hover .rectangle-border3,
+.container-border2:hover .rectangle-border8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-border3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 255%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-border2:hover .rectangle-border3,
+.container-border2:hover .rectangle-border8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-border3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border3:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-border8{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:  rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border8 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-border8 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-border4{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 615px;
+    top: 255%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-border3:hover .rectangle-border4,
+.container-border3:hover .rectangle-border7{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-border4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border4:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-border7{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border7 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-border7 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-border5{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 260px;
+    top: 255%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-border4:hover .rectangle-border5,
+.container-border4:hover .rectangle-border6 {
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-border5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border5:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-border6{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-border6 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-border6 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+/*4 X 4 Chemical Lace*/
+
+.type4-design{
+    position: absolute;
+    z-index: 10;
+    margin-top: 147%;
+    left: 15vw;
+}
+.type4-design h2{
+    color: #484848;
+    text-decoration: underline;
+    text-decoration-color: #484848;
+    font-size: 50px;
+}
+
+.rectangle-chemical2{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 280px;
+    top: 320%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-chemical:hover .rectangle-chemical2,
+.container-chemical:hover .rectangle-chemical9{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-chemical2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical2:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-chemical9{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:  rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical9 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-chemical9 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*product 2*/
+.rectangle-chemical3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 320%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-chemical2:hover .rectangle-chemical3,
+.container-chemical2:hover .rectangle-chemical8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-chemical3{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: 630px;
+    top: 320%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-chemical2:hover .rectangle-chemical3,
+.container-chemical2:hover .rectangle-chemical8{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-chemical3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical3:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-chemical8{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical8 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-chemical8 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*product 3*/
+.rectangle-chemical4{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 615px;
+    top: 320%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.container-chemical3:hover .rectangle-chemical4,
+.container-chemical3:hover .rectangle-chemical7{
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-chemical4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical4:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-chemical7{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical7 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-chemical7 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*product 4*/
+.rectangle-chemical5{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    right: 260px;
+    top: 320%;
+    border-radius: 30px; /* Optional: rounded corners for the rectangle */
+    background-color: #f0f0f0; /* Optional: background color for the rectangle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.rectangle-chemical6 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+}
+.container-chemical4:hover .rectangle-chemical5,
+.container-chemical4:hover .rectangle-chemical6 {
+    transform: scale(1.1); /* Scale up both rectangles to create a "jump out" effect */
+    z-index: 2; /* Ensure they appear above other elements */
+}
+
+
+.rectangle-chemical5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical5:hover img {
+    transform: scale(1.1); /* Scale up the image to match the container's effect */
+}
+
+
+.rectangle-chemical6{
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    background-color:rgba(0, 0, 0, 0.7);
+    right:0px;
+    bottom: 0%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rectangle-chemical6 h2{
+    position: absolute;
+    left: 1vw; /* Adjust this value as needed */
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    margin-top: 8%;
+    text-align: center;
+}
+
+.rectangle-chemical6 p2{
+    position: absolute;
+    left: 6vw;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better visibility */
+    z-index: 4; /* Ensure text is above the image */
+    text-align: center;
+    margin-top: 20%;
+}
+
+
+.rectangle-last{
+    position: absolute;
+    margin-top: 190%;
+    background-color: #000000;
+    height: 30vh;
+    width: 100vw;
+}
+
+.rect{
+    position: absolute;
+    margin-top:180% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}
