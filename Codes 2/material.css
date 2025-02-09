@@ -1,0 +1,652 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 3;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.abtrectangle{
+    position: absolute;
+    width: 100vw;
+    height: 40vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden;
+}
+
+.abtrectangle h2{
+    position: relative;
+    margin-top: 5%;
+    font-size: 100px;
+    font-family: "Advent Pro", sans-serif;
+    left: 15vw;
+    z-index: 3; /* Keeps the heading above the video */
+    color: white; /* Optional: Adjust color for readability */
+}
+
+.abtrectangle p{
+    position: absolute;
+    margin-top: -4%;
+    font-size: 25px;
+    left: 23vw;
+    z-index: 3; /* Keeps the paragraph above the video */
+    color: white; /* Optional: Adjust color for readability */
+}
+
+.abtrectangle video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Places the video behind the text */
+}
+
+
+.toptxt{
+    position: absolute;
+    height: 30vh;
+    width: 71vw;
+    margin-top: 21.5%;
+    margin-left: 16vw;
+}
+.toptxt h2{
+    position: absolute;
+    margin-top: 4%;
+    font-size: 40px;
+    font-weight: bold;
+    width: 15vw;
+    margin-left: 8vw;
+    color: #000000;
+}
+
+.top-line{
+    position: absolute;
+    background-color: #000000;
+    height: 14vh;
+    width: 1px;
+    margin-top: 5%;
+    margin-left: 18vw;
+}
+
+.toptxt p1{
+    position: absolute;
+    margin-top: 5.5%;
+    font-size: 30px;
+    font-weight: normal;
+    margin-left: 20vw;
+    width: 48vw;
+    color: #000000;
+}
+
+
+.more-rect{
+    position: absolute;
+    height: 35vh;
+    width: 100vw;
+    background-color:  rgba(0, 0, 0, 0.3);
+    margin-top: 112%;
+}
+
+.tex{
+    position: absolute;
+    margin-top: 3%;
+    width: 100vw;
+    height: 40vh;
+
+}
+
+.tex h2.te1{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 14vw;
+    color: #ffffff;
+}
+
+.tex p1{
+    position: absolute;
+    width: 18vw;
+    margin-top: 5%;
+    margin-left: 10vw;
+    text-align: center;
+    color: #000000;
+}
+
+.tex h2.te2{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 34vw;
+    color: #ffffff;
+}
+
+.tex p2{
+    position: absolute;
+    width: 18vw;
+    margin-top: 5%;
+    margin-left: 31vw;
+    text-align: center;
+    color: #000000;
+}
+.tex h2.te3{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 54.5vw;
+    color: #ffffff;
+}
+
+.tex p3{
+    position: absolute;
+    width: 17vw;
+    margin-top: 5%;
+    margin-left: 51vw;
+    text-align: center;
+    color: #000000;
+}
+
+.tex h2.te4{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 74vw;
+    color: #ffffff;
+}
+
+.tex p4{
+    position: absolute;
+    width: 17vw;
+    margin-top: 5%;
+    margin-left: 70vw;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mat-rect, .mat-rect2 {
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mat-rect {
+    width: 80vh;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left: 14vw;
+    margin-top: 135%;
+}
+
+.mat-rect2 {
+    width: 70vh;
+    height: 30vh;
+    margin-left: 52vw;
+    margin-top: 143%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-content img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel2{
+    position: absolute;
+}
+.text-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.active {
+    opacity: 1;
+}
+
+.text-content h2.m1{
+    position: absolute;
+    margin-top: 1%;
+    font-size: 70px;
+    margin-left: 10vw;
+}
+
+.text-content p1{
+    position: absolute;
+    margin-top: 14%;
+    width: 30vw;
+    margin-left: -15vw;
+    font-size: 25px;
+}
+.text-content h2.m2{
+    position: absolute;
+    margin-top: 1%;
+    font-size: 70px;
+    margin-left: 10vw;
+}
+
+.text-content p2{
+    position: absolute;
+    margin-top: 14%;
+    width: 30vw;
+    margin-left: -15vw;
+    font-size: 25px;
+}
+.text-content h2.m3{
+    position: absolute;
+    margin-top: 1%;
+    font-size: 70px;
+    margin-left: 10vw;
+}
+
+.text-content p3{
+    position: absolute;
+    margin-top: 14%;
+    width: 30vw;
+    margin-left: -15vw;
+    font-size: 25px;
+}
+
+
+.exp-rect{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    margin-top: 38%;
+    background-color:rgba(204, 192, 21, 0.7);
+    margin-left: 16vw;
+    z-index: 1;
+}
+.exp-rect img{
+    height: 100%;
+    width: 100%;
+}
+
+.tex-exp h2{
+    position: absolute;
+    margin-top: 41%;
+    margin-left: 55vw;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.tex-exp p1{
+    position: absolute;
+    margin-top: 46%;
+    margin-left: 55vw;
+    font-size: 30px;
+    z-index: 10;
+    width: 33vw;
+}
+
+
+.exp-rect2{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    background-color: #000000;
+    margin-left: 51.3vw;
+    margin-top: 61%;
+}
+
+.exp-rect2 img{
+    height: 100%;
+    width: 100%;
+}
+
+.tex-exp2 h2{
+    position: absolute;
+    margin-top: 64%;
+    margin-left: 33vw;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.tex-exp2 p2{
+    position: absolute;
+    margin-top: 69%;
+    margin-left: 12.5vw;
+    font-size: 30px;
+    z-index: 10;
+    width: 33vw;
+    text-align: right;
+}
+
+.exp-rect3{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    margin-top: 84%;
+    background-color:rgba(204, 192, 21, 0.7);
+    margin-left: 16vw;
+    overflow: hidden;
+}
+
+.exp-rect3 img{
+    height: 100%;
+    width: 100%;
+}
+
+.tex-exp3 h2{
+    position: absolute;
+    margin-top: 88%;
+    margin-left: 55vw;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.tex-exp3 p3{
+    position: absolute;
+    margin-top: 93%;
+    margin-left: 55vw;
+    font-size: 30px;
+    z-index: 10;
+    width: 33vw;
+}
+
+
+
+.rect{
+    position: absolute;
+    margin-top:165% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

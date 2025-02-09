@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100%;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+
+.privacy-policy-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    text-align: center;
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.75em;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.subsection-title {
+    font-size: 1.25em;
+    margin-top: 15px;
+}
+
+ul, p {
+    margin-bottom: 20px;
+}
+
+ul.definitions-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.definitions-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+ul.definitions-list li strong {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+.rect{
+    position: absolute;
+    margin-top:0% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+    color: darkmagenta;
+    text-decoration: none;
+    text-decoration-color: darkmagenta;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}

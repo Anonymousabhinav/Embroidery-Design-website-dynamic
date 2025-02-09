@@ -1,0 +1,631 @@
+body {
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+    background-color: #ffffff;
+}
+.rectangle{
+    width: 100vw;
+    height:10vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    background-color: white;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.logo img{
+    width: 5vw;
+    height: auto;
+    position: absolute;
+    margin-top:-5%;
+    z-index: 2;
+    left: 1vw;
+}
+
+.navigation{
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    margin-top: -3%;
+    left: 25vw;
+    font-size: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease; /* Transition for smooth animation */
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #000000;
+}
+.hamburger-content .dropdown2 {
+    background-color: #ffffff;
+}
+
+.hamburger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    cursor: pointer;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    color: #ffffff;
+
+    z-index: 3;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.bar:hover {
+    background-color: #ffffff; /* Change color on hover */
+}
+
+.dropdown2 {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position relative to the .hamburger */
+    top: 100%; /* Position dropdown below the hamburger */
+    left: -20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    border-radius: 2px; /* Rounded corners */
+    padding: 10px; /* Padding inside the dropdown */
+    z-index: 3; /* Ensure dropdown is above other content */
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.dropdown2 a {
+    display: block; /* Block display for links */
+    padding: 10px; /* Padding inside each link */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    z-index: 3;
+}
+
+.dropdown2 a:hover {
+    background-color: #ddd; /* Background color on hover */
+    z-index: 3;
+}
+
+.hamburger:hover .dropdown2 {
+    display: block;
+}
+
+.login-button {
+    position: absolute;
+    top: 3%; /* Adjust as needed */
+    right: 23px; /* Adjust position from the right edge */
+    z-index: 3;
+}
+
+.login-button a {
+    display: inline-block; /* Ensure proper button behavior */
+}
+
+.login-button button {
+    width: 130px; /* Set the width of the button */
+    height: 45px; /* Allow height to adjust based on content */
+    font-size: 12px; /* Set appropriate font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Round the corners */
+    background-color: #000000; /* Set the background color */
+    color: rgb(255, 255, 255); /* Set the text color */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-button button:hover {
+    background-color: #333333; /* Darker color on hover */
+}
+
+.search {
+    --size: 55px; /* Default size of the search container */
+    border: 0px solid var(--clr-primary);
+    display: flex;
+    border-radius: 50px; /* Rounded corners for the container */
+    overflow: hidden;
+    font-size: 1em; /* Default font size */
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    right: 10%;
+    margin-top:-4.1%;
+}
+
+/* Search Input Field */
+.search__input {
+    border: 0;
+    padding: .25em 1em; /* Consistent input padding */
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1em; /* Consistent input font size */
+    transition: width 800ms cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 450ms ease-out;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+}
+
+/* Search Submit Button */
+.search__submit {
+    font-size: 1rem; /* Default button font size */
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: var(--size); /* Default button size */
+    height: var(--size); /* Default button size */
+    background-color: white;
+    z-index: 3;
+}
+
+/* Expanded search on hover/focus */
+.search:hover,
+.search:focus-within {
+    width: 300px; /* Expanded width */
+}
+
+.search:hover .search__input,
+.search:focus-within .search__input {
+    opacity: 1;
+    cursor: text;
+    width: calc(100% - var(--size)); /* Adjust input width */
+}
+
+.search:hover .search__submit,
+.search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.search:hover .search__submit:hover,
+.search:focus-within .search__submit:hover {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.abtrectangle{
+    position: absolute;
+    width: 100vw;
+    height: 40vh;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: rgb(194, 191, 191);
+    overflow: hidden;
+}
+
+.abtrectangle h2{
+    position: relative;
+    margin-top: 5%;
+    font-size: 100px;
+    font-family: "Advent Pro", sans-serif;
+    left: 15vw;
+    z-index: 3; /* Keeps the heading above the video */
+    color: white; /* Optional: Adjust color for readability */
+}
+
+.abtrectangle p{
+    position: absolute;
+    margin-top: -4%;
+    font-size: 25px;
+    left: 23vw;
+    z-index: 3; /* Keeps the paragraph above the video */
+    color: white; /* Optional: Adjust color for readability */
+}
+
+.abtrectangle video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Places the video behind the text */
+}
+
+.txt h2{
+    position: absolute;
+    margin-top: 25%;
+    font-size: 50px;
+    width: 30vw;
+    margin-left: 18vw;
+    font-weight: normal;
+}
+
+.txt .line{
+    position: absolute;
+    width: 6vw;
+    background-color: darkorange;
+    height: 0.2vh;
+    margin-top: 24%;
+    margin-left: 25vw;
+}
+
+.txt p1{
+    position: absolute;
+    margin-top: 23%;
+    color: darkorange;
+    font-size: 25px;
+    margin-left: 19vw;
+}
+
+.txt p{
+    position: absolute;
+    margin-top: 25%;
+    font-size: 30px;
+    margin-left: 40vw;
+    width: 40vw;
+}
+
+.service1{
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-top: 40%;
+    margin-left: 10vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.service1 i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.service1 h2{
+    margin-top: 0%;
+
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.service1 p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.earlydelive{
+    position: absolute;
+    margin-top:40%;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-left: 37.5vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.earlydelive i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.earlydelive h2{
+    margin-top: 0%;
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.earlydelive p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.technology{
+    position: absolute;
+    margin-top:40%;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-left: 65vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.technology i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.technology h2{
+    margin-top: 0%;
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.technology p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.team{
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-top: 55%;
+    margin-left: 10vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.team h2{
+    margin-top: 0%;
+
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.team p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.commercial{
+    position: absolute;
+    margin-top:55%;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-left: 37.5vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.commercial i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.commercial h2{
+    margin-top: 0%;
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.commercial p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.floorplan{
+    position: absolute;
+    margin-top:55%;
+    width: 25vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-left: 65vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floorplan i{
+    margin-top: 5%;
+    margin-left: 1.5vw;
+    font-size: 60px;
+    color: darkorange;
+}
+
+.floorplan h2{
+    margin-top: 0%;
+    margin-left: 1vw;
+    font-size: 30px;
+}
+
+.floorplan p{
+    margin-top: 0%;
+    margin-left: 1vw;
+}
+
+.feedback{
+    position: absolute;
+    margin-top:70%;
+    width: 100%;
+    height: 30%;
+    background-color: #000000;
+    margin-left: 0vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.feedback .line2{
+    position: absolute;
+    width: 0.1vw;
+    height: 5vh;
+    background-color: darkorange;
+    margin-left: 40vw;
+    margin-top: 5%;
+}
+
+.feedback h2{
+    position: absolute;
+    width: 10vw;
+    margin-left: 30vw;
+    margin-top: 3%;
+    font-size: 35px;
+    color: #ffffff;
+}
+.feedback p{
+    position: absolute;
+    width: 20vw;
+    margin-left: 43vw;
+    margin-top: 5%;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.feedback button{
+    position: absolute;
+    color: #ffffff;
+    width: 10vw;
+    height: 5vh;
+    margin-top: 10%;
+    margin-left: 47vw;
+}
+
+.feedback a{
+    text-decoration: none;
+    color: #000000;
+    font-family: "Advent Pro",sans-serif;
+    font-size: 20px;
+}
+
+.last{
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    margin-top:84.8% ;
+    background-color: orange;
+}
+
+
+.last img{
+    position: absolute;
+    height: 40vh;
+    width: 33vw;
+    margin-left: 55vw;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+
+.last p1{
+    position: absolute;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-left: 19vw;
+}
+
+.last h2{
+    position: absolute;
+    font-size: 40px;
+    margin-top: 7%;
+    margin-left: 19vw;
+}
+
+.last p{
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 19vw;
+    width: 30vw;
+}
+
+
+
+
+.rect{
+    position: absolute;
+    margin-top:113% ;
+    height: 40vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.rect img{
+    position: absolute;
+    width: 13vw;
+    height: auto;
+    left: 4vw;
+    margin-top: 4%;
+}
+
+.rect .t{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 6%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t2{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 8%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t3{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 10%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t4{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 12%;
+    left: 30vw;
+    font-weight: normal;
+}
+.rect .t5{
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 14%;
+    left: 30vw;
+    font-weight: normal;
+}
+
+.rect .imp{
+    font-size: 80px;
+    left: 50vw;
+    position: absolute;
+    margin-top: 7.6%;
+    font-weight: normal;
+}
+
+.insta{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.5%;
+    right: 29vw;
+    color: darkmagenta;
+    text-decoration: none;
+    text-decoration-color: darkmagenta;
+}
+
+.face{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 22vw;
+}
+.linkin{
+    position: absolute;
+    font-size: 60px;
+    margin-top: 8.4%;
+    right: 15vw;
+}
